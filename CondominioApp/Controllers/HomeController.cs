@@ -1,5 +1,6 @@
 ﻿using CondominioApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Diagnostics;
 
 namespace CondominioApp.Controllers
@@ -19,6 +20,14 @@ namespace CondominioApp.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Pricing()
+        {
+            return View();
+        }
+        public IActionResult About()
         {
             return View();
         }

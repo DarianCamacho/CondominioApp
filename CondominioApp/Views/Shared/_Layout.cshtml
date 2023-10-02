@@ -9,17 +9,21 @@
     <link rel="stylesheet" href="~/CondominioApp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/WhatsApp.css" />  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="~/css/Home.css" />
+    <link rel="stylesheet" href="~/css/zephyr.css" />
 </head>
 
 <body>
+
+
+
     <header>
 
-        <a href="https://wa.me/+50672996374" class="float" target="_blank">
-            <i class="fa fa-whatsapp my-float"></i>
+        <a href="https://api.whatsapp.com/send?phone=+50672996374&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float" style="color: white !important;"></i>
         </a>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="color: black !important">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Condiminio Escazú</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,17 +37,34 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">SistemaV</a>
+                            <div class="dropdown-menu">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Visitas" asp-action="Visitas">Crear Visita</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     </form>
                     <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Sign in</a>
                     <div class="ml-2">
-
+                        <p>⠀⠀</p>
                     </div>
                     <div class="ml-2">
                         <!-- Agregamos un margen a la izquierda para separar los botones -->
-                        <button type="button" class="btn btn-outline-dark">Sign up</button>
+                        <a class="btn btn-outline-dark" asp-area="" asp-controller="Login" asp-action="SignUp">Sign up</a>
+
                     </div>
                 </div>
             </div>
@@ -56,10 +77,24 @@
         </main>
     </div>
 
+    <footer>
 
+
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".close-toast").click(function () {
+                $(".toast").addClass("hidden");
+            });
+        });
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
